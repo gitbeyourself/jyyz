@@ -31,26 +31,35 @@ public class GameUtil extends TaskContent{
             public void content_0() throws Exception {
                 for (int i = 0; i < j; i++) {
                     mFairy.condit();
-                    result =mFairy.findPic(new String[]{"myhome.png","ksgjcha.png","gjcha.png","quxiao.png","pqcha.png","jbcha.png","mrcha.png","hycha.png","yjcha.png","jjcha.png","jjccha.png","dhmcha.png","rwcha.png","gkcha.png","cha.png"});
-                    mFairy.onTap(0.75f,result,"关闭",Sleep);
-                    result1 =mFairy.findPic(2,989,140,1269,"gjcha.png");
+
+                    result = mFairy.findPic(478,197,676,755,"lingqu5.png");
+                    mFairy.onTap(0.8f, result, "领取", Sleep);
+
+                    result = mFairy.findPic(81,766,302,866,"tuichu.png");
+                    mFairy.onTap(0.8f, result, "退出1", Sleep);
+
+                    result3 =mFairy.findPic(168,758,573,873,"kbc1.png");
+                    mFairy.onTap(0.8f,result3,683,34,688,44,"空白处",Sleep);
+
+                    result = mFairy.findPic(11,266,707,382,"zdym.png");
+                    mFairy.onTap(0.8f, result, 27,1244,33,1252,"组队页面退出", Sleep);
+
+                    result =mFairy.findPic(10,1154,137,1267,new String[]{"sign out.png"});
+                    mFairy.onTap(0.75f,result,"退出",Sleep);
+
+                    result2 =mFairy.findPic(626,380,717,624,"lk.png");
+                    mFairy.onTap(0.8f,result2,"离开",Sleep);
+
+                    result1 =mFairy.findPic(612,11,712,564,new String[]{"cha.png","cha1.png","cha2.png","cha3.png"});
                     mFairy.onTap(0.8f,result1,"关闭",Sleep);
-                    result2 =mFairy.findPic( 106,739,375,998,"quxiao.png");
-                    mFairy.onTap(0.8f,result2,"关闭",Sleep);
-                    result3 =mFairy.findPic( 518,3,717,404,new String[]{"kxcha.png","kxcha1.png"});
-                    mFairy.onTap(0.8f,result3,"关闭",Sleep);
 
-
-                    if (result.sim > 0.75f || result1.sim > 0.8f|| result2.sim >0.8f || result3.sim > 0.8f) {
+                    if (result.sim > 0.75f || result1.sim > 0.8f  || result2.sim > 0.8f) {
                         j = 5;
                     } else {
                         j = 2;
                     }
-                    result =mFairy.findPic(new String[]{"Hurry up.png","renyi.png","renyi2.png","agin.png","paper.png","chengj.png"});
-                    mFairy.onTap(0.8f,result,"点击屏幕继续",Sleep);
-
-                    result =mFairy.findPic("chongz.png");
-                    mFairy.onTap(0.8f,result,318,1063,369,1087,"战斗失败重试",Sleep);
+                    result = mFairy.findPic(218,1004,633,1135,"sz.png");
+                    mFairy.onTap(0.8f, result, 682,1078,687,1091,"退出设置", Sleep);
                 }
                 setTaskEnd();
             }

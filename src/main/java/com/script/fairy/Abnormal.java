@@ -7,7 +7,7 @@ import com.script.opencvapi.FindResult;
 import com.script.opencvapi.LtLog;
 
 /**
- * Created by Administrator on 2019/3/22 0022.
+ * Created by Administrator on 2023/2/15.
  */
 
 public class Abnormal extends TaskContent {
@@ -17,96 +17,92 @@ public class Abnormal extends TaskContent {
     public Abnormal(AtFairyImpl ATFairy) throws Exception {
         mFairy = ATFairy;
     }
-    int count_1=0;
     String task_id= AtFairyConfig.getOption("task_id");
     //全局处理
     public void erro() throws Exception {
 
-        result =mFairy.findPic(465,921,715,1040,new String[]{"automatic.png","automatic2.png","auto2.png"});
-        mFairy.onTap(0.8f,result,"err打开自动",Sleep);
+        result =mFairy.findPic(348,1119,701,1269,"xyty.png");
+        mFairy.onTap(0.8f,result,"err协议同意",Sleep);
 
-        result =mFairy.findPic(447,926,708,1028,"auto.png");
-        mFairy.onTap(0.8f,result,"err打开自动",Sleep);
+        result =mFairy.findPic(267,431,464,504,"zuyq.png");
+        mFairy.onTap(0.8f,result,186,765,195,776,"err组队邀请",Sleep);
 
-        if (count_1==0) {
-            result = mFairy.findPic("fourbei.png");
-            mFairy.onTap(0.8f, result, "err四倍速度", 500);
-            result1 = mFairy.findPic("beginfour.png");
-            if (result.sim < 0.8f && result1.sim < 0.8f) {
-                result = mFairy.findPic(447,926,708,1028,"beisu.png");
-                mFairy.onTap(0.8f, result, "err双倍速度", 500);
+        result =mFairy.findPic(448,524,709,803,"shiyong.png");
+        mFairy.onTap(0.8f,result,"err使用",Sleep);
+
+        result =mFairy.findPic(206,666,520,760,"bddl.png");
+        mFairy.onTap(0.9f,result,255,711,259,715,"err本次登录不再提示",Sleep);
+
+        result =mFairy.findPic(218,672,515,801,"queding.png");
+        mFairy.onTap(0.8f,result,"err确定",Sleep);
+
+        result = mFairy.findPic(139,821,582,1137,"checkvx.png");
+        if (result.sim > 0.8f) {
+
+            switch (AtFairyConfig.getOption("dl")) {
+                case "1":
+                    mFairy.onTap(0.8f, result, 351,915,372,934, "errvx登录界面_QQ登录", Sleep);
+                    break;
+                case "2":
+                    mFairy.onTap(0.8f, result, 363,1054,373,1063,"errvx登录界面_微信登录", Sleep);
+                    break;
             }
         }
-        result =mFairy.findPic("su.png");
-        if (result.sim > 0.8f){
-            count_1 =1;
-        }else {
-            count_1 =0;
+
+        result = mFairy.findPic(10,1007,701,1219,"Authorized.png");
+        mFairy.onTap(0.8f, result, "errqq完成授權", Sleep);
+
+        result = mFairy.findPic(new String[]{"login.png", "login2.png", "login3.png"});
+        mFairy.onTap(0.8f, result, "err新版qq登陆", Sleep);
+
+        result = mFairy.findPic(444, 846, 598, 991, "sure.png");
+        mFairy.onTap(0.8f, result, "err新版qq隐私政策同意", Sleep);
+
+        result = mFairy.findPic("authorization.png");
+        mFairy.onTap(0.8f, result, "err新版qq授权", Sleep);
+
+        result = mFairy.findPic(new String[]{"login.png", "login2.png", "login3.png"});
+        mFairy.onTap(0.8f, result, "err新版qq登陆", Sleep);
+
+        result = mFairy.findPic(219, 850, 512, 1114, "checkvx3.png");
+        mFairy.onTap(0.8f, result, "errqq登录角色", Sleep);
+
+        result = mFairy.findPic(219, 850, 512, 1114, "checkvx4_1.png");
+        mFairy.onTap(0.8f, result, "errqq登录角色", Sleep);
+
+        result = mFairy.findPic(160, 656, 525, 1233, "qqlogn.png");
+        mFairy.onTap(0.8f, result, "errqq登录角色1", Sleep);
+
+        result = mFairy.findPic(151,1066,570,1208,"read.png");
+        mFairy.onTap(0.8f, result, 206,1173,209,1177,"err协议阅读并同意", Sleep);
+
+        result = mFairy.findPic(151,1066,570,1208,"trca.png");
+        mFairy.onTap(0.8f, result, "err踏入长安", Sleep);
+
+        result = mFairy.findPic(25,770,700,1147,"hmsz.png");
+        mFairy.onTap(0.8f, result, 88,967,98,969,"err省电", Sleep);
+        mFairy.onTap(0.8f, result, 352,1069,366,1074,"err画面省电确定", Sleep);
+
+        result = mFairy.findPic(204,1101,514,1229, "jrca.png");
+        mFairy.onTap(0.8f, result, "err进入长安", Sleep);
+
+        result = mFairy.findPic(74,577,636,646, "cangku.png");
+        mFairy.onTap(0.8f, result, 173,813,191,826,"err仓库取消", Sleep);
+
+        result = mFairy.findPic(177,785,531,1255,new String[]{"kbc1.png","kbc.png","kbc2.png"});
+        mFairy.onTap(0.8f, result, 683,34,688,44,"点击空白处", Sleep);
+
+        result = mFairy.findPic(244,699,469,944,"hand.png");
+        mFairy.onTap(0.8f, result, "手", Sleep);
+
+        result = mFairy.findPic(139,266,568,413,"gxhd.png");
+        mFairy.onTap(0.8f, result, 670,211,679,227,"恭喜获得", Sleep);
+
+        result = mFairy.findPic(153,878,587,1022,"jiesuo.png");
+        if (result.sim > 0.8f) {
+            LtLog.e(mFairy.getLineInfo("err解锁中"));
+            mFairy.ranSwipe(198,942,521,945,500, (long) 500,0);
         }
-        result =mFairy.findPic("Upper limit of props.png");
-        mFairy.onTap(0.8f,result,343,838,361,849,"err道具上限",Sleep);
-
-        result =mFairy.findPic(29,179,703,374,"yxfc.png");
-        mFairy.onTap(0.8f,result,639,255,660,279,"关闭",Sleep);
-
-        result =mFairy.findPic(29,179,703,374,"mjxc.png");
-        mFairy.onTap(0.8f,result,639,255,660,279,"关闭",Sleep);
-
-        result =mFairy.findPic(271,256,472,400,"jl.png");
-        mFairy.onTap(0.8f,result,332,858,354,876,"err奖励确认",Sleep);
-
-        result =mFairy.findPic("Upper limit of props2.png");
-        mFairy.onTap(0.8f,result,344,833,359,847,"err道具上限",Sleep);
-
-        result =mFairy.findPic(113,198,598,438,"hdjl.png");
-        mFairy.onTap(0.8f,result,629,179,641,201,"奖励确认",Sleep);
-
-        result =mFairy.findPic(49,337,663,570,"ksgj.png");
-        mFairy.onTap(0.8f,result,246,836,269,849,"快速挂机关闭",Sleep);
-
-        result = mFairy.findPic(new String[]{"start-up.png","start-up2.png"});
-        mFairy.onTap(0.8f,result,"err启动游戏",Sleep);
-
-        result =mFairy.findPic(48,598,706,1074,"jllq.png");
-        mFairy.onTap(0.8f,result,"奖励领取",Sleep);
-
-        result =mFairy.findPic("network environment.png");
-        mFairy.onTap(0.8f,result,222,837,236,850,"err连接失败检查网络环境重试",Sleep);
-
-        result =mFairy.findPic("continue2.png");
-        mFairy.onTap(0.8f,result,"err继续",Sleep);
-
-        result =mFairy.findPic("jj.png");
-        mFairy.onTap(0.8f,result,"err奖励",Sleep);
-
-        result =mFairy.findPic("blinda.png");
-        mFairy.onTap(0.8f,result,362,1157,373,1164,"err关闭贝琳达",Sleep);
-
-        result =mFairy.findPic("xukong.png");
-        mFairy.onTap(0.8f,result,605,167,623,182,"err关闭虚空",Sleep);
-
-        result =mFairy.findPic("jbs.png");
-        mFairy.onTap(0.8f,result,349,955,366,972,"锦标赛领取",Sleep);
-
-        result =mFairy.findPic(new String[]{"super value.png","super value1.png"});
-        mFairy.onTap(0.8f,result,299,1174,308,1186,"err关闭超值",2000);
-
-        result =mFairy.findPic("Failure in validation.png");
-        mFairy.onTap(0.8f,result,479,844,489,853,"err效验失败",Sleep);
-
-        result =mFairy.findPic(new String[]{"shiyong.png","fell.png"});
-        mFairy.onTap(0.8f,result,640,278,654,294,"err免费使用三天",Sleep);
-
-        result =mFairy.findPic("new hero2.png");
-        mFairy.onTap(0.8f,result,28,1208,36,1219,"err新英雄",Sleep);
-        result =mFairy.findPic("jiyu.png");
-        mFairy.onTap(0.8f,result,607,334,620,351,"err际遇梦境",Sleep);
-
-        result =mFairy.findPic("yinyou.png");
-        mFairy.onTap(0.8f,result,367,1191,374,1197,"err吟游诗人弹窗",Sleep);
-
-        result =mFairy.findPic("qingkong.png");
-        mFairy.onTap(0.8f,result,463,839,475,850,"err清空确定",Sleep);
     }
 
 
