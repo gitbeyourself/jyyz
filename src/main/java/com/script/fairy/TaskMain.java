@@ -31,7 +31,7 @@ public class TaskMain {
      public  TaskMain (AtFairyImpl ypFairy) throws Exception {
          mFairy = ypFairy;
          mFairy.setGameName("剑与远征");
-         mFairy.setGameVersion(319);
+         mFairy.setGameVersion(324);
          init();
          gameUtil = new GameUtil(mFairy);
          teamTask=new TeamTask(mFairy);
